@@ -10,7 +10,7 @@ insert into tbl_board (title, content, writer)
 values (#{title},#{content},#{writer})
 </insert>
 
-<select id="read" resultType="com.rohaky.domain.BoardVO">
+<select id="read" resultType="BoardVO">
 select
   bno, title, content, writer, regdate, viewcnt
 from 
@@ -27,7 +27,7 @@ where bno = #{bno}
 delete from tbl_board where bno = #{bno}
 </delete>
 
-<select id="listAll" resultType="com.rohaky.domain.BoardVO">
+<select id="listAll" resultType="BoardVO">
 select 
   bno, title, content, writer, regdate, viewcnt
 from

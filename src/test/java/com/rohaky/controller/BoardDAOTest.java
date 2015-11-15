@@ -32,10 +32,10 @@ public class BoardDAOTest {
 //		dao.create(board);
 //	}
 	
-//	@Test
-//	public void testRead() throws Exception {
-//		logger.info(dao.read(1).toString());
-//	}
+	@Test
+	public void testRead() throws Exception {
+		logger.info(dao.read(1).toString());
+	}
 //	
 //	@Test
 //	public void testUpdate() throws Exception {
