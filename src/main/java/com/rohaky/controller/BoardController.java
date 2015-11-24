@@ -32,14 +32,13 @@ public class BoardController {
 		
 		service.regist(board);
 		
-		rttr.addFlashAttribute("msg", "SUCCESS");
+		rttr.addFlashAttribute("msg", "success");
 		
-//		return "/board/success";
 		return "redirect:/board/listAll";
 	}
 	
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
 	public void listAll(Model model) throws Exception {
-		logger.info("show all list......");
+		logger.info("show all list....");
 	}
 }
