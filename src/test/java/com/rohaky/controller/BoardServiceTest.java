@@ -55,12 +55,12 @@ public class BoardServiceTest {
 //		svr.remove(2);
 //	}
 	
-//	@Test
-//	public void testListAll() throws Exception {
-//		List<BoardVO> boardList = svr.listAll();
-//		 
-//		for (BoardVO vo : boardList) {
-//			logger.info(vo.toString());
-//		}
-//	}
+	@Test
+	public void testListAll() throws Exception {
+		List<BoardVO> boardList = svr.listAll();
+		 
+		for (BoardVO vo : boardList) {
+			logger.info(vo.toString());
+		}
+	}
 }
