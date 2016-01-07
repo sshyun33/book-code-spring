@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import com.rohaky.domain.SearchCriteria;
 import org.springframework.stereotype.Service;
 
 import com.rohaky.domain.BoardVO;
@@ -49,5 +50,15 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public int listCountCriteria(Criteria cri) throws Exception {
 		return dao.countPaging(cri);
+	}
+
+	@Override
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+		return dao.listSearch(cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		return dao.listSearchCount(cri);
 	}
 }

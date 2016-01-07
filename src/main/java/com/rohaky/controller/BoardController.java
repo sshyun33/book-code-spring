@@ -146,6 +146,4 @@ public class BoardController {
 		model.addAttribute(service.read(bno));
 	}
 
-
-	
 }
