@@ -22,14 +22,16 @@ import com.rohaky.service.BoardService;
 public class BoardController {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
-	@Inject BoardService service;
+	@Inject
+	BoardService service;
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public void registerGET(BoardVO board, Model model) throws Exception {
     //로그 출력
 		logger.info("register get....");
 	}
-	
+
+
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registPOST(BoardVO board, RedirectAttributes rttr) throws Exception {
 		logger.info("regist post ....");
@@ -40,6 +42,7 @@ public class BoardController {
 		rttr.addFlashAttribute("msg", "success");
 		
 		return "redirect:/board/listAll";
+
 	}
 	
 	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
@@ -64,7 +67,7 @@ public class BoardController {
 		
 		return "redirect:/board/listAll";
 	}
-	
+
 	@RequestMapping(value = "/removePage", method = RequestMethod.POST)
 	public String remove(@RequestParam("bno") int bno,
 			Criteria cri,

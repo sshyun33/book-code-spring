@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--suppress ALL -->
+<mapper namespace="com.rohaky.mapper.replyMapper">
+    <select id="list" resultType="ReplyVO">
+        SELECT
+        *
+        FROM
+        tbl_reply
+        WHERE bno = #{bno}
+        ORDER by rno DESC
+    </select>
+
+    <insert id="create" parameterType="ReplyVO">
+      INSERT INTO tbl_reply (bno, replytext, replyer)
+      VALUE (#{bno}, #{replytext}, #{replyer})
+    </insert>
+
+    <update id="update">
+      update tbl_reply set replytext = #{replytext}, updatedate = now()
+       where rno = #{rno}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM tbl_reply where rno = #{rno}
+    </delete>
+
+</mapper>
