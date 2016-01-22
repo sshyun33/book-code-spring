@@ -1,4 +1,4 @@
-package com.rohaky.controller;
+package com.rohaky.persistence;
 
 import java.util.List;
 
@@ -15,7 +15,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.rohaky.domain.BoardVO;
 import com.rohaky.domain.Criteria;
-import com.rohaky.persistence.BoardDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/**/*.xml"})

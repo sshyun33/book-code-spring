@@ -29,11 +29,27 @@ public class ReplyController {
         ResponseEntity<String> entity = null;
         try {
             service.addReply(vo);
-            entity = new ResponseEntity<>(HttpStatus.OK);
+            entity = new ResponseEntity<>("SUCCESS", HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             entity = new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
+        return entity;
+    }
+
+    @RequestMapping(value = "/{bno}", method = RequestMethod.GET)
+    public ResponseEntity<ReplyVO> read(
+            @PathVariable("bno") Integer bno) {
+
+        ResponseEntity<ReplyVO> entity = null;
+        try {
+            entity = new ResponseEntity<>(
+                    service.listReply(bno).get(0), HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            entity = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
         return entity;
     }
 

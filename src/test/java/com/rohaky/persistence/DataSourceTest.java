@@ -1,4 +1,4 @@
-package com.rohaky.controller;
+package com.rohaky.persistence;
 
 import java.sql.Connection;
 

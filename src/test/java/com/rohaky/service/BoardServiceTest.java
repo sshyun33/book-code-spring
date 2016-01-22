@@ -1,4 +1,4 @@
-package com.rohaky.controller;
+package com.rohaky.service;
 
 import java.util.List;
 
@@ -12,7 +12,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.rohaky.domain.BoardVO;
-import com.rohaky.service.BoardService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
