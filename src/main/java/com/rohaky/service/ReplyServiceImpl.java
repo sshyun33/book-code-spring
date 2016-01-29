@@ -1,5 +1,6 @@
 package com.rohaky.service;
 
+import com.rohaky.domain.Criteria;
 import com.rohaky.domain.ReplyVO;
 import com.rohaky.persistence.ReplyDAO;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,15 @@ public class ReplyServiceImpl implements ReplyService {
     @Override
     public void removeReply(Integer rno) throws Exception {
         dao.delete(rno);
+    }
+
+    @Override
+    public List<ReplyVO> listReplyPage(Integer bno, Criteria cri) throws Exception {
+        return dao.listPage(bno, cri);
+    }
+
+    @Override
+    public int count(Integer bno) throws Exception {
+        return dao.count(bno);
     }
 }

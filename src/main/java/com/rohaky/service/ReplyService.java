@@ -1,5 +1,6 @@
 package com.rohaky.service;
 
+import com.rohaky.domain.Criteria;
 import com.rohaky.domain.ReplyVO;
 
 import java.util.List;
@@ -15,4 +16,8 @@ public interface ReplyService {
     public void modifyReply(ReplyVO vo) throws Exception;
 
     public void removeReply(Integer rno) throws Exception;
+
+    public List<ReplyVO> listReplyPage(Integer bno, Criteria cri) throws Exception;
+
+    public int count(Integer bno) throws Exception;
 }

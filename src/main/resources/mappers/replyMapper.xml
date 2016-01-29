@@ -28,4 +28,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         DELETE FROM tbl_reply where rno = #{rno}
     </delete>
 
+    <select id="listPage" resultType="ReplyVO">
+       SELECT
+        *
+       FROM
+         tbl_reply
+       WHERE
+         bno = #{bno}
+       ORDER BY rno desc
+       LIMIT #{cri.pageStart}, #{cri.perPageNum}
+    </select>
+
+    <select id="count" resultType="int">
+        select count(bno) from tbl_reply where bno = #{bno};
+    </select>
 </mapper>

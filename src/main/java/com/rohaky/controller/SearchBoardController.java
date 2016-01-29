@@ -48,10 +48,10 @@ public class SearchBoardController {
         model.addAttribute(service.read(bno));
     }
 
-    @RequestMapping(value ="/removePage", method = RequestMethod.POST)
+    @RequestMapping(value = "/removePage", method = RequestMethod.POST)
     public String remove(@RequestParam("bno") int bno,
-                       SearchCriteria cri,
-                       RedirectAttributes rttr) throws Exception {
+                         SearchCriteria cri,
+                         RedirectAttributes rttr) throws Exception {
         service.remove(bno);
 
         rttr.addAttribute("page", cri.getPage());
@@ -73,8 +73,8 @@ public class SearchBoardController {
 
     @RequestMapping(value = "/modifyPage", method = RequestMethod.POST)
     public String modifyPagingPOST(BoardVO board,
-                                 SearchCriteria cri,
-                                 RedirectAttributes rttr) throws Exception {
+                                   SearchCriteria cri,
+                                   RedirectAttributes rttr) throws Exception {
         logger.info(cri.toString());
         service.modify(board);
 
@@ -97,18 +97,16 @@ public class SearchBoardController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String registPOST(BoardVO board, RedirectAttributes rttr)
-        throws Exception {
+            throws Exception {
         logger.info("regist post......");
         logger.info(board.toString());
 
         service.regist(board);
-            System.out.println();
 
         rttr.addFlashAttribute("msg", "success");
 
         return "redirect:/sboard/list";
     }
-
 
 
 }
