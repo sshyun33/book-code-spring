@@ -62,7 +62,7 @@
 		console.log(formObj);
 		
 		$(".btn-warning").on("click", function(){
-			self.location = "/sboard/listPage?page=${cri.page}&perPageNum=${cri.perPageNum}"
+			self.location = "/sboard/list?page=${cri.page}&perPageNum=${cri.perPageNum}"
 							+ "&searchType=${cri.searchType}&keyword=${cri.keyword}";
 		});
 
